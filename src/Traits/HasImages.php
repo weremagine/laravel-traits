@@ -4,6 +4,8 @@ namespace Remagine\Traits;
 
 trait HasImages {
 
+    abstract public function imagesArray(): array;
+
     public static function bootHasImages()
     {
         static::retrieved(function($model) {
