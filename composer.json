@@ -1,0 +1,19 @@
+{
+    "name": "weremagine/laravel-traits",
+    "description": "A collection of opinionated Traits for use with Laravel.",
+    "keywords": [
+        "laravel",
+        "traits"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Remagine\\Traits\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
