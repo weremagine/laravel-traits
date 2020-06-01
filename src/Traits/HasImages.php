@@ -15,5 +15,11 @@ trait HasImages {
                 $model->{ $image['attribute'] } = $prefix.$model->{ $image['field'] };
             });
         });
+
+        static::saving(function($model) {
+            collect($model->imagesArray())->map(function($image) use($model) {
+                unset($model->{ $image['attribute'] });
+            });
+        });
     }
 }
