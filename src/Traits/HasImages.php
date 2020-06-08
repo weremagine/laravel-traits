@@ -10,6 +10,8 @@ trait HasImages {
     {
         static::retrieved(function($model) {
             collect($model->imagesArray())->map(function($image) use($model) {
+                if (! $model->{ $image['field'] }) return null;
+
                 $prefix = method_exists($model, 'imagePrefix') ? $model->imagePrefix() : '';
 
                 $model->{ $image['attribute'] } = $prefix.$model->{ $image['field'] };
