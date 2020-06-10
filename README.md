@@ -82,6 +82,34 @@ class Article extends Model
     protected $sluggify = 'title';
 ```
 
+## HasUniqueKey
+`HasUniqueKey` automatically sets a unique key when creating records for models that implement it.
+
+`$unique_key` property _(optional)_
+The field name to use when creating the unique key - defaults to `key`.
+
+`$unique_key_length` property _(optional)_
+The length you wish for the unique key to be - defaults to `10`.
+
+### Usage
+```php
+use Remagine\Traits\HasUniqueKey;
+
+class Article extends Model
+{
+    use HasUniqueKey;
+    
+    /**
+     * The name of the unique key for the model.
+     */
+    protected $unique_key = 'key';
+
+    /**
+     * The length unique keys generated should be.
+     */
+    protected $unique_key_length = 10;
+```
+
 ## UserAgent
 `UserAgent` automatically adds the `user-agent` header specified in the request to an `agent` field when new records of a model are stored.
 
