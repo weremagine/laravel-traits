@@ -3,6 +3,15 @@ A collection of opinionated traits for Laravel, by **REMAGINE**.
 
 `composer require weremagine/laravel-traits`
 
+## TOC
+[HasCreator](#HasCreator)
+[HasImages](#HasImages)
+[HasOne](#HasOne)
+[HasSlug](#HasSlug)
+[HasUniqueKey](#HasUniqueKey)
+[HasUuid](#HasUuid)
+[UserAgent](#UserAgent)
+
 ## HasCreator
 `HasCreator` automatically adds the current authorised user's `id` to the `user_id` column on record creation of models that implement it.
 
