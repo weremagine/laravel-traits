@@ -60,6 +60,48 @@ class Article extends Model
     }
 ```
 
+## HasOne
+`HasOne` automatically adds a differing related model relationship, where 
+
+`$has_one_attribute` property _(optional)_
+The name to use when setting the relationship, defaults to `model`.
+
+`$has_one_type` property _(optional)_
+The name of the field that contains the path to related model class, such as the value `App\Models\Menu` - defaults to `model_type`.
+
+`$has_one_id` property _(optional)_
+The name of the field that contains the related model's id - defaults to `model_id`.
+
+### Usage
+```php
+use Remagine\Traits\HasOne;
+
+class QrCode extends Model
+{
+    use HasOne;
+    
+    /**
+     * The name to give the relationship via the HasOne trait.
+     *
+     * @var string
+     */
+    protected $has_one_attribute = 'model';
+
+    /**
+     * The name of the field to lookup the HasOne model.
+     *
+     * @var string
+     */
+    protected $has_one_type = 'model_type';
+
+    /**
+     * The name of the field containing the HasOne model's id.
+     *
+     * @var string
+     */
+    protected $has_one_id = 'model_id';
+```
+
 ## HasSlug
 `HasSlug` automatically sets a slug when saving (creating or updating) any models that implement it.
 
