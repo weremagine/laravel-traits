@@ -12,4 +12,9 @@ trait HasUuid {
             $model->{ $model->uuid_field ?? 'uuid' } = Str::uuid();
         });
     }
+
+    public static function byUuid($uuid)
+    {
+        return self::where('uuid', $uuid)->firstOrFail();
+    }
 }

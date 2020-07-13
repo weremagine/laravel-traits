@@ -181,6 +181,14 @@ class Article extends Model
     protected $uuid_field = 'uuid';
 ```
 
+### Methods
+
+`byUuid`
+Retrieves a record using it's UUID.
+```php
+Article::byUuid($uuid);
+```
+
 ## UserAgent
 `UserAgent` automatically adds the `user-agent` header specified in the request to an `agent` field when new records of a model are stored.
 
