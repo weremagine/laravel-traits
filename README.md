@@ -192,6 +192,17 @@ Article::byUuid($uuid);
 ## UserAgent
 `UserAgent` automatically adds the `user-agent` header specified in the request to an `agent` field when new records of a model are stored.
 
+`$parse_agent_fields` property _(optional)_
+A boolean to indicate whether or not to parse the agent string and store on creation - defaults to `false`.
+
+The following fields (nullable strings) are stored:
+- platform
+- platform_version
+- browser
+- browser_version
+- device
+- device_name
+
 ### Usage
 ```php
 use Remagine\Traits\UserAgent;
@@ -199,4 +210,11 @@ use Remagine\Traits\UserAgent;
 class Article extends Model
 {
     use UserAgent;
+
+    /**
+     * Indicates if the agent should be parsed when saving.
+     *
+     * @var array
+     */
+    protected $parse_agent_fields = false;
 ```

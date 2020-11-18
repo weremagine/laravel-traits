@@ -11,6 +11,9 @@
             "Remagine\\Traits\\": "src/"
         }
     },
+    "require": {
+        "jenssegers/agent": "^2.6"
+    },
     "config": {
         "sort-packages": true
     },
