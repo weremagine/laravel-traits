@@ -3,7 +3,7 @@ Below is an example of fields to add within a migration, to parse and store extr
 ```php
 $table->text('agent');
 $table->string('platform')->nullable();
-$table->string('platform_version');
+$table->string('platform_version')->nullable();
 $table->string('browser')->nullable();
 $table->string('browser_version')->nullable();
 $table->string('device')->nullable();
