@@ -142,6 +142,9 @@ The field name to use when creating the unique key - defaults to `key`.
 `$unique_key_length` property _(optional)_
 The length you wish for the unique key to be - defaults to `10`.
 
+`$uppercase_key` property _(optional)_
+A boolean to indicate if keys should be in uppercase - defaults to `false`.
+
 ### Usage
 ```php
 use Remagine\Traits\HasUniqueKey;
@@ -159,6 +162,11 @@ class Article extends Model
      * The length unique keys generated should be.
      */
     protected $unique_key_length = 10;
+
+    /**
+     * Indicates if the key should be uppercased.
+     */
+    protected $uppercase_key = false;
 ```
 
 ## HasUuid
