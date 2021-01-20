@@ -145,6 +145,12 @@ The length you wish for the unique key to be - defaults to `10`.
 `$uppercase_key` property _(optional)_
 A boolean to indicate if keys should be in uppercase - defaults to `false`.
 
+`$key_prefix` property _(optional)_
+The prefix for the unique key. - defaults to `null`.
+
+`$key_suffix` property _(optional)_
+The suffix for the unique key. - defaults to `null`.
+
 ### Usage
 ```php
 use Remagine\Traits\HasUniqueKey;
@@ -167,6 +173,16 @@ class Article extends Model
      * Indicates if the key should be uppercased.
      */
     protected $uppercase_key = false;
+
+    /**
+     * The prefix for the unique key.
+     */
+    protected $key_prefix = null;
+
+    /**
+     * The suffix for the unique key.
+     */
+    protected $key_suffix = null;
 ```
 
 ## HasUuid
