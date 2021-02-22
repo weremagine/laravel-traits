@@ -8,15 +8,17 @@ trait HasSlug {
 
 	public static function bootHasSlug()
 	{
-		$base_slug =  Str::slug($model->{ $model->sluggify ?? 'name' });
-        $slug = $base_slug;
-        $count = 1;
+        static::saving(function($model) {
+            $base_slug =  Str::slug($model->{ $model->sluggify ?? 'name' });
+            $slug = $base_slug;
+            $count = 1;
 
-        while (self::where('slug', $slug)->exists()) {
-            $slug = "$base_slug-$count";
-            $count++;
-        }
+            while (self::where('slug', $slug)->exists()) {
+                $slug = "$base_slug-$count";
+                $count++;
+            }
 
-        $model->slug = $slug;
+            $model->slug = $slug;
+        });
 	}
 }
