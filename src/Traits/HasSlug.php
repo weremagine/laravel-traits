@@ -13,7 +13,7 @@ trait HasSlug {
             $slug = $base_slug;
             $count = 1;
 
-            while (self::where('slug', $slug)->exists()) {
+            while (self::where('slug', $slug)->where('id', '!=', $model->id)->exists()) {
                 $slug = "$base_slug-$count";
                 $count++;
             }
